@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_personal"
+            android:icon="@drawable/personal"
+            android:title="Personal Details" />
+    </group>
+
+    <item android:title="College">
+        <menu>
+            <item
+                android:id="@+id/nav_academic"
+                android:icon="@drawable/ass"
+                android:title="Academic Details" />
+            <item
+                android:id="@+id/nav_library"
+                android:icon="@drawable/librar"
+                android:title="Library Details" />
+        </menu>
+    </item>
+
+</menu>

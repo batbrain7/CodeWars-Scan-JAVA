@@ -34,8 +34,8 @@ public class LibraryDetails extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-
-                            issues.setText(response.getString("Books_I3sued"));
+                            Toast.makeText(getApplicationContext(),"Connecting....",Toast.LENGTH_SHORT).show();
+                            issues.setText(response.getString("Books_Isued"));
                             fine.setText("FINE DUE :   " + response.getString("Fine_Due"));
 
                         } catch (JSONException e) {

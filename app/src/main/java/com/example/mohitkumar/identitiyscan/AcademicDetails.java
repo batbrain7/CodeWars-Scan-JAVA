@@ -122,6 +122,7 @@ public class AcademicDetails extends AppCompatActivity {
                             @Override
                             public void onResponse(JSONObject response) {
                                 try {
+                                    Toast.makeText(getApplicationContext(),"Connecting....",Toast.LENGTH_SHORT).show();
                                     Log.d("TAG",url2);
                                     //id = response.getString("id");
                                     math.setText(response.getString("Maths_2"));

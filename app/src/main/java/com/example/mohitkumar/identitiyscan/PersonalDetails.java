@@ -52,7 +52,7 @@ public class PersonalDetails extends AppCompatActivity {
         }
         else
         {
-            imageView1.setImageResource(R.drawable.vasu1);
+            imageView1.setImageResource(R.drawable.vasu2);
         }
         url = url + s + ".json";
 
@@ -61,6 +61,7 @@ public class PersonalDetails extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
+                            Toast.makeText(getApplicationContext(),"Connecting....",Toast.LENGTH_SHORT).show();
                             Log.d("TAG",url);
                            // id = response.getString("id");
                             //barcode = response.getString("Barcode");

@@ -102,28 +102,7 @@ public class MainActivity extends AppCompatActivity
         f3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                AlertDialog.Builder alert = new AlertDialog.Builder(getApplicationContext());
-//
-//                alert.setTitle("Number");
-//                alert.setMessage("Enter the Barcode number");
-//
-//// Set an EditText view to get user input
-//                final EditText input = new EditText(getApplicationContext());
-//                alert.setView(input);
-//
-//                alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialog, int whichButton) {
-//                        Toast.makeText(getApplicationContext(),"Access the server",Toast.LENGTH_SHORT).show();
-//                    }
-//                });
-//
-//                alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialog, int whichButton) {
-//                        // Canceled.
-//                    }
-//                });
-//
-//                alert.show();
+
              Intent intent = new Intent(getApplicationContext(),PopUpActivity.class);
                 startActivity(intent);
             }
@@ -140,10 +119,47 @@ public class MainActivity extends AppCompatActivity
         textroll = (TextView) hview.findViewById(R.id.textView);
         imageView = (ImageView)hview.findViewById(R.id.imageView);
         navigationView.setNavigationItemSelectedListener(this);
-//        if(!barcode.equals(null))
-//        {
-//
-//        }
+
+        Bundle b = getIntent().getExtras();
+        if(b!=null)
+        {
+            String s = b.getString("texted");
+            final String url1 = url + s + ".json";
+            Toast.makeText(getApplicationContext(),"Connecting....",Toast.LENGTH_SHORT).show();
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url1, (String) null,
+                    new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            try {
+                                Log.d("TAG",url1);
+                                id = response.getString("id");
+                                barcode = response.getString("Barcode");
+                                textname.setText(response.getString("Name"));
+                                textroll.setText(response.getString("Roll_No"));
+
+                                if(response.getString("Barcode").equals("221720"))
+                                {
+                                    imageView.setImageResource(R.drawable.mohit);
+                                }
+                                else if(response.getString("Barcode").equals("1115838"))
+                                {
+                                    imageView.setImageResource(R.drawable.vasu1);
+                                }
+
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    VolleyLog.d("Error",error.getMessage());
+                    Toast.makeText(getApplicationContext(),error.getMessage(),Toast.LENGTH_LONG).show();
+                }
+            });
+            MySingleton.getInstance(MainActivity.this).addtorequestqueue(jsonObjectRequest);
+
+        }
     }
 
     @Override
@@ -161,6 +177,7 @@ public class MainActivity extends AppCompatActivity
                         @Override
                         public void onResponse(JSONObject response) {
                             try {
+                                Toast.makeText(getApplicationContext(),"Connecting....",Toast.LENGTH_SHORT).show();
                                 Log.d("TAG",url);
                                 id = response.getString("id");
                                 barcode = response.getString("Barcode");
@@ -173,7 +190,7 @@ public class MainActivity extends AppCompatActivity
                                 }
                                 else if(response.getString("Barcode").equals("1115838"))
                                 {
-                                    imageView.setImageResource(R.drawable.vasu);
+                                    imageView.setImageResource(R.drawable.vasu1);
                                 }
 
                             } catch (JSONException e) {
@@ -220,6 +237,8 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent intent = new Intent(MainActivity.this,AboutActivity.class);
+            startActivity(intent);
             return true;
         }
 
@@ -264,7 +283,6 @@ public class MainActivity extends AppCompatActivity
     class Myatask extends AsyncTask<Void,Void,Void>
     {
 
-        //private final HttpClient Client = new DefaultHttpClient();
         private String Content;
         @Override
         protected Void doInBackground(Void... params) {

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#e4f7e7"
     tools:context="com.example.mohitkumar.identitiyscan.PersonalDetails">
 
     <ScrollView
@@ -27,6 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:background="#97f4c5"
                 >
             <TextView
                 android:layout_width="wrap_content"
@@ -51,7 +53,9 @@
                 android:layout_marginTop="35dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:background="#ffee94"
+                >
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -72,7 +76,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="#ffee94"
+            >
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -95,6 +101,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="30dp"
+                android:background="#cfa8e6"
                 >
             <TextView
                 android:layout_width="wrap_content"
@@ -108,7 +115,7 @@
                 android:textColor="@color/colorPersonal"
                 />
                 <ImageView
-                    android:layout_width="60dp"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/nav"
                     android:src="@drawable/navig"
@@ -119,9 +126,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:background="#ffe0e6"
                 >
                 <ImageView
-                    android:layout_width="40dp"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:src="@drawable/call"
                     android:layout_marginRight="30dp"
@@ -129,7 +137,7 @@
                     android:id="@+id/callicon"
                     />
                 <ImageView
-                    android:layout_width="40dp"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:src="@drawable/message"
                     android:layout_marginLeft="30dp"
@@ -149,7 +157,9 @@
             <LinearLayout
                 android:layout_marginTop="30dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="#e0fff9"
+                >
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -160,7 +170,7 @@
                 android:layout_weight="1"
                 />
                 <ImageView
-                    android:layout_width="50dp"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/send_btn"
                     android:layout_marginRight="20dp"

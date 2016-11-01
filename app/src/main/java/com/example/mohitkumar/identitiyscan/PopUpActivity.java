@@ -17,7 +17,7 @@ public class PopUpActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"This is it",Toast.LENGTH_SHORT);
+                I
             }
         });
     }

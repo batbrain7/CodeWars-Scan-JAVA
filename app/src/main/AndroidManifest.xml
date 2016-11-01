@@ -23,7 +23,9 @@
         <activity android:name=".PersonalDetails"
             android:theme="@style/NewTheme"
             />
-        <activity android:name=".AcademicDetails" />
+        <activity android:name=".AcademicDetails"
+            android:theme="@style/NewTheme1"
+            />
         <activity android:name=".LibraryDetails"></activity>
     </application>
 

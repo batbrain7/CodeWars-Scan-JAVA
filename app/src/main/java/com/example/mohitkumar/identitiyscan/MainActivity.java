@@ -140,10 +140,10 @@ public class MainActivity extends AppCompatActivity
         textroll = (TextView) hview.findViewById(R.id.textView);
         imageView = (ImageView)hview.findViewById(R.id.imageView);
         navigationView.setNavigationItemSelectedListener(this);
-        if(!barcode.equals(null))
-        {
-
-        }
+//        if(!barcode.equals(null))
+//        {
+//
+//        }
     }
 
     @Override
@@ -166,6 +166,15 @@ public class MainActivity extends AppCompatActivity
                                 barcode = response.getString("Barcode");
                                 textname.setText(response.getString("Name"));
                                 textroll.setText(response.getString("Roll_No"));
+
+                                if(response.getString("Barcode").equals("221720"))
+                                {
+                                    imageView.setImageResource(R.drawable.mohit);
+                                }
+                                else if(response.getString("Barcode").equals("1115838"))
+                                {
+                                    imageView.setImageResource(R.drawable.vasu);
+                                }
 
                             } catch (JSONException e) {
                                 e.printStackTrace();

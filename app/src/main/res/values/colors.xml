@@ -5,4 +5,6 @@
     <color name="colorAccent">#FF4000</color>
     <color name="colorPersonaldark">#133630</color>
     <color name="colorPersonal">#1F574D</color>
+    <color name="colorAcademic">#624b7a</color>
+    <color name="colorAcademicDark">#271E30</color>
 </resources>

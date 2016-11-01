@@ -19,6 +19,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="NewTheme1" parent="Theme.AppCompat.Light.DarkActionBar">
+    <item name="colorPrimary">@color/colorAcademic</item>
+    <item name="colorPrimaryDark">@color/colorAcademicDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+</style>
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
